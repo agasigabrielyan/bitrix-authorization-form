@@ -27,15 +27,15 @@ function App() {
     <div className="App">
       <form onSubmit={onSubmit}>
           <h2>Авторизация</h2>
-          <label for="authorization-login">
+          <label htmlFor="authorization-login">
                 Логин
                 <input onChange={onChange} value={formData.login} placeholder="Логин" id="authorization-login" type='text' name="login" />
           </label>
-          <label for="authorization-password">
+          <label htmlFor="authorization-password">
               Пароль
               <input onChange={onChange} value={formData.password} placeholder="Пароль" id="authorization-password" type="password" name="password" />
           </label>
-          <label for="authorization-remember">
+          <label htmlFor="authorization-remember">
               <input onChange={onChange} checked={formData.remember} id="authorization-remember" type="checkbox" name="remember" />
               <span>Запомнить меня</span>
           </label>
