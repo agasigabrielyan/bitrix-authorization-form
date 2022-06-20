@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 function App() {
-    const [formData, setFormData] = React.useState({
+    const [formValues, setFormValues] = React.useState({
         login: "",
         password: "",
         remember: true
     });
+    const [formErrors, setFormErros] = React.useState({})
 
     function onChange(event) {
         const {name, value, type, checked} = event.target;
@@ -20,6 +21,10 @@ function App() {
     }
 
     function onSubmit(event) {
+        validate(formData)
+    }
+
+    function validate(values) {
         debugger;
     }
 
@@ -29,14 +34,14 @@ function App() {
           <h2>Авторизация</h2>
           <label htmlFor="authorization-login">
                 Логин
-                <input onChange={onChange} value={formData.login} placeholder="Логин" id="authorization-login" type='text' name="login" />
+                <input onChange={onChange} value={formValues.login} placeholder="Логин" id="authorization-login" type='text' name="login" />
           </label>
           <label htmlFor="authorization-password">
               Пароль
-              <input onChange={onChange} value={formData.password} placeholder="Пароль" id="authorization-password" type="password" name="password" />
+              <input onChange={onChange} value={formValues.password} placeholder="Пароль" id="authorization-password" type="password" name="password" />
           </label>
           <label htmlFor="authorization-remember">
-              <input onChange={onChange} checked={formData.remember} id="authorization-remember" type="checkbox" name="remember" />
+              <input onChange={onChange} checked={formValues.remember} id="authorization-remember" type="checkbox" name="remember" />
               <span>Запомнить меня</span>
           </label>
           <button>
